@@ -1,0 +1,21 @@
+.nav {
+  background-color: teal;
+  list-style-type: none;
+  text-align: center;
+}
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+.nav li a {
+  text-decoration: none;
+  color: white;
+}
+.item {
+  background-color: teal;
+  padding: 3em;
+}
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
