@@ -1,5 +1,4 @@
 /* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -9,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f7f7f7;
 }
 
 html {
@@ -17,17 +17,16 @@ html {
 
 p {
   color: rgb(85, 85, 85);
+  font-weight: 600;
 }
 
 /* TRANSITION */
-
 a,
 .btn {
   transition: all 300ms ease;
 }
 
 /* DESKTOP NAV */
-
 nav,
 .nav-links {
   display: flex;
@@ -67,7 +66,6 @@ a:hover {
 }
 
 /* HAMBURGER MENU */
-
 #hamburger-nav {
   display: none;
 }
@@ -134,20 +132,7 @@ a:hover {
   transform: rotate(-45deg) translate(10px, -5px);
 }
 
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
 /* SECTIONS */
-
 section {
   padding-top: 4vh;
   height: 96vh;
@@ -161,7 +146,6 @@ section {
 }
 
 /* PROFILE SECTION */
-
 #about {
   display: flex;
   justify-content: center;
@@ -207,14 +191,12 @@ section {
 }
 
 /* ICONS */
-
 .icon {
   cursor: pointer;
   height: 2rem;
 }
 
 /* BUTTONS */
-
 .btn-container {
   display: flex;
   justify-content: center;
@@ -262,7 +244,6 @@ section {
 }
 
 /* ABOUT SECTION */
-
 .arrow {
   position: absolute;
   right: -5rem;
@@ -287,7 +268,6 @@ section {
 }
 
 /* Education SECTION */
-
 #skills {
   position: relative;
 }
@@ -306,7 +286,6 @@ section {
 }
 
 /* PROJECTS SECTION */
-
 #projects {
   position: relative;
 }
@@ -333,8 +312,116 @@ section {
   border-color: rgb(163, 163, 163);
 }
 
-/* CONTACT */
+/* PROJECTS SECTION */
+#portfolio {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 2rem; /* Gap between cards */
+  width: 100%;
+  justify-items: center; /* Center the cards */
+}
+
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px; /* Max width of each card */
+  height: 500px; /* Height of each card */
+  text-align: center;
+  padding: 2rem; /* Padding inside each card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-15px); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: #333 1px solid;
+}
+
+.project-img {
+  width: 100%;
+  height: 300px; /* Image height */
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem; /* Space between image and title */
+}
+
+.project-title {
+  font-size: 2rem; /* Larger title */
+  font-weight: 700; /* Bold title */
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Space between buttons */
+}
+
+.btn {
+  padding: 1.2rem;
+  width: 10rem; /* Button width */
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 300ms ease;
+}
+
+.project-btn {
+  color: black;
+  border: 1px solid rgb(163, 163, 163);
+  background: none;
+}
+
+.project-btn:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+  cursor: pointer;
+}
+
+.project-btn:focus {
+  outline: none;
+}
+
+/* Tablet and below (1024px and under) */
+@media (max-width: 1024px) {
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+
+  .project-card {
+    max-width: 90%; /* Adjust width for tablet screens */
+  }
+}
+
+/* Mobile and below (768px and under) */
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+
+  .project-card {
+    max-width: 100%; /* Full width for each card on mobile */
+    height: auto; /* Adjust height */
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .project-img {
+    height: 200px; /* Adjust image height for mobile */
+  }
+}
+
+/* CONTACT SECTION */
 #contact {
   display: flex;
   justify-content: center;
@@ -374,7 +461,6 @@ section {
 }
 
 /* FOOTER SECTION */
-
 footer {
   height: 26vh;
   margin: 0 1rem;
