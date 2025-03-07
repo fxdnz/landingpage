@@ -325,8 +325,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   gap: 2rem; /* Gap between cards */
-  width: 100%;
-  justify-items: center; /* Center the cards */
+ /* Center the cards */
 }
 
 .project-card {
