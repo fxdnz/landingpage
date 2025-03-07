@@ -10,12 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       const subjectsList = document.getElementById("subjectsList");
+      const searchBar = document.getElementById("searchBar");
       let subjects = data.courses;
 
-      function displaySubjects(subjects) {
+      function displaySubjects(filteredSubjects) {
         subjectsList.innerHTML = "";
 
-        subjects.forEach((subject) => {
+        filteredSubjects.slice().forEach((subject) => {
           let li = document.createElement("li");
           li.classList.add("course-item");
 
@@ -31,6 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
           subjectsList.appendChild(li);
         });
       }
+
+      searchBar.addEventListener("keyup", function () {
+        const searchText = searchBar.value.toLowerCase();
+        const filteredSubjects = subjects.filter(
+          (subject) =>
+            subject.description.toLowerCase().includes(searchText) ||
+            subject.year_level.toLowerCase().includes(searchText) ||
+            subject.sem.toLowerCase().includes(searchText) ||
+            subject.code.toLowerCase().includes(searchText)
+        );
+        displaySubjects(filteredSubjects);
+      });
 
       displaySubjects(subjects);
     })
